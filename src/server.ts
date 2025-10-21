@@ -7,7 +7,7 @@ import pdfParse from 'pdf-parse';
 import { PDFToMarkdownConverter } from './converter';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = parseInt(process.env.PORT || '3000', 10);
 
 // Configure multer for file uploads
 const upload = multer({
@@ -125,7 +125,7 @@ app.use((err: any, req: Request, res: Response, next: any) => {
 });
 
 // Start server
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`
 ╔════════════════════════════════════════════════════════╗
 ║  PDF to Markdown Converter - Web Server               ║
