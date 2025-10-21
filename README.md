@@ -1,9 +1,10 @@
 # PDF to Markdown Converter
 
-A simple and efficient command-line tool to convert PDF files to Markdown format.
+A simple and efficient tool to convert PDF files to Markdown format. Available as both a command-line interface (CLI) and a web application.
 
 ## Features
 
+### Command Line Interface (CLI)
 - Convert single PDF files to Markdown
 - Batch convert multiple PDF files
 - Preserve formatting options
@@ -11,6 +12,14 @@ A simple and efficient command-line tool to convert PDF files to Markdown format
 - Automatic heading detection
 - List formatting support
 - Code block detection
+
+### Web Application
+- User-friendly web interface
+- Drag & drop file upload
+- Real-time conversion
+- Download converted Markdown files
+- Preview converted content
+- Support for files up to 10MB
 
 ## Installation
 
@@ -32,6 +41,27 @@ npm run build
 ```
 
 ## Usage
+
+### Web Application
+
+Start the web server:
+
+```bash
+# Development mode
+npm run web
+
+# Production mode (after building)
+npm run web:build
+```
+
+Then open your browser and navigate to `http://localhost:3000`
+
+The web interface allows you to:
+1. Drag and drop or select a PDF file
+2. Choose whether to preserve formatting
+3. Click "変換開始" (Start Conversion) to convert
+4. Preview the converted Markdown
+5. Download the result as a .md file
 
 ### Command Line Interface
 
@@ -163,6 +193,8 @@ function hello() {
 - `npm run build`: Compile TypeScript to JavaScript
 - `npm run dev`: Run CLI in development mode
 - `npm start`: Run the compiled CLI
+- `npm run web`: Run web server in development mode
+- `npm run web:build`: Build and run web server in production mode
 
 ## How It Works
 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to Markdown コンバーター</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📄 PDF to Markdown コンバーター</h1>
+            <p class="subtitle">PDFファイルを簡単にMarkdown形式に変換</p>
+        </header>
+
+        <main>
+            <div class="upload-section" id="uploadSection">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📁</div>
+                    <h2>PDFファイルをドラッグ＆ドロップ</h2>
+                    <p>または</p>
+                    <label for="fileInput" class="btn btn-primary">ファイルを選択</label>
+                    <input type="file" id="fileInput" accept=".pdf" hidden>
+                    <p class="file-info">最大ファイルサイズ: 10MB</p>
+                </div>
+
+                <div class="options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="preserveFormatting">
+                        <span>フォーマットを保持する</span>
+                    </label>
+                </div>
+
+                <div class="file-selected" id="fileSelected" style="display: none;">
+                    <div class="file-details">
+                        <span class="file-icon">📄</span>
+                        <div class="file-info-text">
+                            <p class="file-name" id="fileName"></p>
+                            <p class="file-size" id="fileSize"></p>
+                        </div>
+                        <button class="btn-remove" id="removeFile">✕</button>
+                    </div>
+                    <button class="btn btn-convert" id="convertBtn">変換開始</button>
+                </div>
+            </div>
+
+            <div class="progress-section" id="progressSection" style="display: none;">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p class="progress-text" id="progressText">変換中...</p>
+            </div>
+
+            <div class="result-section" id="resultSection" style="display: none;">
+                <div class="result-header">
+                    <h2>✓ 変換完了!</h2>
+                </div>
+
+                <div class="metadata" id="metadata"></div>
+
+                <div class="preview">
+                    <h3>プレビュー</h3>
+                    <div class="preview-content" id="previewContent"></div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-download" id="downloadBtn">
+                        <span>⬇</span> Markdownをダウンロード
+                    </button>
+                    <button class="btn btn-secondary" id="newConversionBtn">
+                        新しいファイルを変換
+                    </button>
+                </div>
+            </div>
+
+            <div class="error-section" id="errorSection" style="display: none;">
+                <div class="error-message">
+                    <h2>⚠ エラー</h2>
+                    <p id="errorMessage"></p>
+                    <button class="btn btn-secondary" id="tryAgainBtn">もう一度試す</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>PDF to Markdown Converter v1.0.0</p>
+            <p>最大10MBまでのPDFファイルに対応しています</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
