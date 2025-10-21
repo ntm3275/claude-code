@@ -1,9 +1,18 @@
-# PDF to Markdown コンバーター
+# PDF to Markdown コンバーター & 画像縮小アプリ
 
-PDFファイルをMarkdown形式に変換するシンプルで効率的なコマンドラインツールです。
+ドキュメントと画像処理のためのシンプルで効率的なコマンドラインツール集です。
+
+## 含まれるツール
+
+### 1. PDF to Markdown コンバーター
+PDFファイルをMarkdown形式に簡単に変換します。
+
+### 2. 画像縮小アプリ（TIFF対応）
+TIFFを含む様々な形式の画像を縮小します。
 
 ## 機能
 
+### PDF to Markdown
 - 単一のPDFファイルをMarkdownに変換
 - 複数のPDFファイルを一括変換
 - フォーマット保持オプション
@@ -11,6 +20,15 @@ PDFファイルをMarkdown形式に変換するシンプルで効率的なコマ
 - 自動見出し検出
 - リスト形式のサポート
 - コードブロックの検出
+
+### 画像縮小アプリ
+- 単一または複数の画像を縮小
+- **TIFFファイル対応**（入力・出力両方）
+- JPEG、PNG、WebP、AVIF、GIFなど多様な形式に対応
+- アスペクト比の維持オプション
+- 品質設定（1-100）
+- 様々なフィットモード（cover、contain、fill、inside、outside）
+- 形式変換（例：TIFF → JPEG）
 
 ## インストール
 
@@ -161,8 +179,29 @@ function hello() {
 ### スクリプト
 
 - `npm run build`: TypeScriptをJavaScriptにコンパイル
-- `npm run dev`: 開発モードでCLIを実行
-- `npm start`: コンパイルされたCLIを実行
+- `npm run dev`: 開発モードでPDFコンバーターCLIを実行
+- `npm run dev:image`: 開発モードで画像縮小アプリCLIを実行
+- `npm start`: コンパイルされたPDFコンバーターCLIを実行
+
+## 画像縮小アプリ
+
+画像縮小アプリの詳細なドキュメントは [IMAGE-RESIZER.md](IMAGE-RESIZER.md) を参照してください。
+
+### クイックスタート
+
+```bash
+# 単一の画像を縮小
+npm run dev:image -- resize photo.jpg --width 800
+
+# TIFFファイルをJPEGに変換して縮小
+npm run dev:image -- resize scan.tiff --width 1920 --format jpeg
+
+# ディレクトリ内のすべての画像を一括縮小
+npm run dev:image -- batch ./photos --width 1024
+
+# 対応形式を確認
+npm run dev:image -- formats
+```
 
 ## 仕組み
 

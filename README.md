@@ -1,9 +1,18 @@
-# PDF to Markdown Converter
+# PDF to Markdown Converter & Image Resizer
 
-A simple and efficient command-line tool to convert PDF files to Markdown format.
+A collection of simple and efficient command-line tools for document and image processing.
+
+## Tools Included
+
+### 1. PDF to Markdown Converter
+Convert PDF files to Markdown format with ease.
+
+### 2. Image Resizer (with TIFF Support)
+Resize images with support for various formats including TIFF.
 
 ## Features
 
+### PDF to Markdown
 - Convert single PDF files to Markdown
 - Batch convert multiple PDF files
 - Preserve formatting options
@@ -11,6 +20,15 @@ A simple and efficient command-line tool to convert PDF files to Markdown format
 - Automatic heading detection
 - List formatting support
 - Code block detection
+
+### Image Resizer
+- Resize single or multiple images
+- **TIFF file support** (input and output)
+- Support for JPEG, PNG, WebP, AVIF, GIF, and more
+- Maintain aspect ratio options
+- Quality settings (1-100)
+- Multiple fit modes (cover, contain, fill, inside, outside)
+- Format conversion (e.g., TIFF → JPEG)
 
 ## Installation
 
@@ -161,8 +179,29 @@ function hello() {
 ### Scripts
 
 - `npm run build`: Compile TypeScript to JavaScript
-- `npm run dev`: Run CLI in development mode
-- `npm start`: Run the compiled CLI
+- `npm run dev`: Run PDF converter CLI in development mode
+- `npm run dev:image`: Run image resizer CLI in development mode
+- `npm start`: Run the compiled PDF converter CLI
+
+## Image Resizer
+
+For detailed documentation on the image resizer, see [IMAGE-RESIZER.md](IMAGE-RESIZER.md).
+
+### Quick Start
+
+```bash
+# Resize a single image
+npm run dev:image -- resize photo.jpg --width 800
+
+# Resize a TIFF file and convert to JPEG
+npm run dev:image -- resize scan.tiff --width 1920 --format jpeg
+
+# Batch resize all images in a directory
+npm run dev:image -- batch ./photos --width 1024
+
+# List supported formats
+npm run dev:image -- formats
+```
 
 ## How It Works
 

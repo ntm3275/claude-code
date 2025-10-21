@@ -1,32 +1,39 @@
 {
   "name": "pdf-to-markdown-converter",
   "version": "1.0.0",
-  "description": "A simple and efficient PDF to Markdown converter",
+  "description": "A simple and efficient PDF to Markdown converter with image resizing support",
   "main": "dist/index.js",
   "bin": {
-    "pdf2md": "dist/cli.js"
+    "pdf2md": "dist/cli.js",
+    "img-resize": "dist/image-cli.js"
   },
   "scripts": {
     "build": "tsc",
     "start": "node dist/cli.js",
     "dev": "ts-node src/cli.ts",
+    "dev:image": "ts-node src/image-cli.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "pdf",
     "markdown",
     "converter",
-    "pdf2md"
+    "pdf2md",
+    "image",
+    "resize",
+    "tiff"
   ],
   "author": "",
   "license": "MIT",
   "dependencies": {
     "pdf-parse": "^1.1.1",
-    "commander": "^11.1.0"
+    "commander": "^11.1.0",
+    "sharp": "^0.33.0"
   },
   "devDependencies": {
     "@types/node": "^20.10.5",
     "@types/pdf-parse": "^1.1.4",
+    "@types/sharp": "^0.32.0",
     "typescript": "^5.3.3",
     "ts-node": "^10.9.2"
   }
