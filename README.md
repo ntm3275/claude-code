@@ -9,6 +9,8 @@ Convert PDF files to Markdown format with ease.
 
 ### 2. Image Resizer (with TIFF Support)
 Resize images with support for various formats including TIFF.
+- **CLI Version**: Command-line interface for batch processing
+- **WEB Version**: Browser-based interface with drag & drop support
 
 ## Features
 
@@ -29,6 +31,7 @@ Resize images with support for various formats including TIFF.
 - Quality settings (1-100)
 - Multiple fit modes (cover, contain, fill, inside, outside)
 - Format conversion (e.g., TIFF → JPEG)
+- **WEB interface** with drag & drop and real-time preview
 
 ## Installation
 
@@ -181,11 +184,15 @@ function hello() {
 - `npm run build`: Compile TypeScript to JavaScript
 - `npm run dev`: Run PDF converter CLI in development mode
 - `npm run dev:image`: Run image resizer CLI in development mode
+- `npm run dev:web`: Run image resizer WEB server in development mode
 - `npm start`: Run the compiled PDF converter CLI
+- `npm run start:web`: Run the compiled image resizer WEB server
 
 ## Image Resizer
 
-For detailed documentation on the image resizer, see [IMAGE-RESIZER.md](IMAGE-RESIZER.md).
+For detailed documentation on the image resizer:
+- CLI Version: [IMAGE-RESIZER.md](IMAGE-RESIZER.md)
+- WEB Version: [WEB-VERSION.md](WEB-VERSION.md)
 
 ### Quick Start
 
@@ -202,6 +209,24 @@ npm run dev:image -- batch ./photos --width 1024
 # List supported formats
 npm run dev:image -- formats
 ```
+
+### WEB Version Quick Start
+
+```bash
+# Start the web server
+npm run dev:web
+
+# Open your browser and go to:
+# http://localhost:3000
+
+# Then:
+# 1. Drag & drop an image or click to upload
+# 2. Set resize options (width, height, quality, format)
+# 3. Click "Resize" button
+# 4. Preview and download the resized image
+```
+
+For complete WEB version documentation, see [WEB-VERSION.md](WEB-VERSION.md).
 
 ## How It Works
 

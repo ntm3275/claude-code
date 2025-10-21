@@ -28,3 +28,7 @@ Thumbs.db
 *.test.pdf
 test-output/
 test-images/
+
+# Web server uploads and output
+uploads/
+output/

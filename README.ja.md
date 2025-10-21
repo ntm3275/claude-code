@@ -9,6 +9,8 @@ PDFファイルをMarkdown形式に簡単に変換します。
 
 ### 2. 画像縮小アプリ（TIFF対応）
 TIFFを含む様々な形式の画像を縮小します。
+- **CLI版**: バッチ処理向けコマンドラインインターフェース
+- **WEB版**: ドラッグ&ドロップ対応のブラウザインターフェース
 
 ## 機能
 
@@ -29,6 +31,7 @@ TIFFを含む様々な形式の画像を縮小します。
 - 品質設定（1-100）
 - 様々なフィットモード（cover、contain、fill、inside、outside）
 - 形式変換（例：TIFF → JPEG）
+- **WEBインターフェース**（ドラッグ&ドロップ、リアルタイムプレビュー対応）
 
 ## インストール
 
@@ -181,11 +184,15 @@ function hello() {
 - `npm run build`: TypeScriptをJavaScriptにコンパイル
 - `npm run dev`: 開発モードでPDFコンバーターCLIを実行
 - `npm run dev:image`: 開発モードで画像縮小アプリCLIを実行
+- `npm run dev:web`: 開発モードで画像縮小WEBサーバーを実行
 - `npm start`: コンパイルされたPDFコンバーターCLIを実行
+- `npm run start:web`: コンパイルされた画像縮小WEBサーバーを実行
 
 ## 画像縮小アプリ
 
-画像縮小アプリの詳細なドキュメントは [IMAGE-RESIZER.md](IMAGE-RESIZER.md) を参照してください。
+画像縮小アプリの詳細なドキュメント：
+- CLI版: [IMAGE-RESIZER.md](IMAGE-RESIZER.md)
+- WEB版: [WEB-VERSION.md](WEB-VERSION.md)
 
 ### クイックスタート
 
@@ -202,6 +209,24 @@ npm run dev:image -- batch ./photos --width 1024
 # 対応形式を確認
 npm run dev:image -- formats
 ```
+
+### WEB版 クイックスタート
+
+```bash
+# WEBサーバーを起動
+npm run dev:web
+
+# ブラウザで以下のURLにアクセス:
+# http://localhost:3000
+
+# 使い方:
+# 1. 画像をドラッグ&ドロップ、またはクリックしてアップロード
+# 2. リサイズオプションを設定（幅、高さ、品質、形式）
+# 3. 「リサイズ実行」ボタンをクリック
+# 4. プレビューを確認してダウンロード
+```
+
+WEB版の完全なドキュメントは [WEB-VERSION.md](WEB-VERSION.md) を参照してください。
 
 ## 仕組み
 
