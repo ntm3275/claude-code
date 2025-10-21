@@ -27,3 +27,4 @@ Thumbs.db
 # Test files
 *.test.pdf
 test-output/
+test-images/
