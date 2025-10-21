@@ -5,7 +5,7 @@ import fs from 'fs';
 import { ImageResizer } from './resizer';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
 // Create uploads directory if it doesn't exist
 const uploadsDir = path.join(__dirname, '../uploads');
@@ -164,9 +164,10 @@ const cleanupOldFiles = () => {
 setInterval(cleanupOldFiles, 30 * 60 * 1000);
 
 // Start server
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`\n🚀 Image Resizer Web Server is running!`);
   console.log(`📡 Server: http://localhost:${PORT}`);
+  console.log(`📡 External: http://0.0.0.0:${PORT}`);
   console.log(`🖼️  Upload images and resize them through the web interface\n`);
 });
 
